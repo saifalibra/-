@@ -10,14 +10,26 @@ import UIKit
 import RealmSwift
 import UserNotifications
 
-class InputViewController: UIViewController {
+class InputViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+  
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var contentsTextView: UITextView!
     @IBOutlet weak var datePicker: UIDatePicker!
-    @IBOutlet weak var categoryTextField: UITextField!
+    @IBOutlet weak var selectCategory: UIPickerView!
+    
     
     let realm = try! Realm()
     var task: Task!
+     var categoryArray = try! Realm().objects(Category.self)
+           
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+         return 1
+      }
+      
+      func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+          return categoryArray.count
+      }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +41,10 @@ class InputViewController: UIViewController {
         titleTextField.text = task.title
         contentsTextView.text = task.contents
         datePicker.date = task.date
-        categoryTextField.text = task.category
+        selectCategory.delegate = self
+        selectCategory.dataSource = self
+        categoryArray = realm.objects(Category.self)
+              
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -37,7 +52,7 @@ class InputViewController: UIViewController {
             self.task.title = self.titleTextField.text!
             self.task.contents = self.contentsTextView.text
             self.task.date = self.datePicker.date
-            self.task.category = self.categoryTextField.text!
+           
             self.realm.add(self.task, update: .modified)
         }
         

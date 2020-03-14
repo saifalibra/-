@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4B3FE28124174FE600FC3331 /* InputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3FE28024174FE600FC3331 /* InputViewController.swift */; };
+		4B44F201241B7514003ED64A /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B44F200241B7514003ED64A /* ViewController2.swift */; };
 		4B4769C92416173C00FA4BEC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4769C82416173C00FA4BEC /* AppDelegate.swift */; };
 		4B4769CB2416173C00FA4BEC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4769CA2416173C00FA4BEC /* SceneDelegate.swift */; };
 		4B4769CD2416173C00FA4BEC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4769CC2416173C00FA4BEC /* ViewController.swift */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		4B3FE28024174FE600FC3331 /* InputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewController.swift; sourceTree = "<group>"; };
+		4B44F200241B7514003ED64A /* ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
 		4B4769C52416173C00FA4BEC /* taskapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = taskapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B4769C82416173C00FA4BEC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4B4769CA2416173C00FA4BEC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 				4B4769C82416173C00FA4BEC /* AppDelegate.swift */,
 				4B4769CA2416173C00FA4BEC /* SceneDelegate.swift */,
 				4B4769CC2416173C00FA4BEC /* ViewController.swift */,
+				4B44F200241B7514003ED64A /* ViewController2.swift */,
 				4B3FE28024174FE600FC3331 /* InputViewController.swift */,
 				4B4769CE2416173C00FA4BEC /* Main.storyboard */,
 				4B4769D12416173D00FA4BEC /* Assets.xcassets */,
@@ -217,6 +220,7 @@
 				4BAD6DDA2417AC84002D3C0E /* Task.swift in Sources */,
 				4B4769CB2416173C00FA4BEC /* SceneDelegate.swift in Sources */,
 				4B3FE28124174FE600FC3331 /* InputViewController.swift in Sources */,
+				4B44F201241B7514003ED64A /* ViewController2.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

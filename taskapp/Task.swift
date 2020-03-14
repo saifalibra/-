@@ -18,11 +18,20 @@ class Task: Object {
     
      @objc dynamic var date = Date()
     
-    @objc dynamic var category = ""
+    @objc dynamic var category: Category?
     
     override static func primaryKey() -> String? {
         return "id"
     }
    
 }
-
+class Category: Object {
+    
+    @objc dynamic var tasktype = ""
+    
+     @objc dynamic var id = 0
+    
+    override static func primaryKey() -> String? {
+          return "id"
+      }
+}
