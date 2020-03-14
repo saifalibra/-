@@ -20,7 +20,7 @@ class InputViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     
     let realm = try! Realm()
     var task: Task!
-     var categoryArray = try! Realm().objects(Category.self)
+    var categoryArray = try! Realm().objects(Category.self)
            
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
          return 1
@@ -30,6 +30,16 @@ class InputViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
           return categoryArray.count
       }
     
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return categoryArray[row].tasktype
+    }
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+        try! realm.write{
+        self.task.category = categoryArray[row]
+        self.realm.add(self.task, update: .modified)
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,7 +62,6 @@ class InputViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
             self.task.title = self.titleTextField.text!
             self.task.contents = self.contentsTextView.text
             self.task.date = self.datePicker.date
-           
             self.realm.add(self.task, update: .modified)
         }
         
@@ -60,6 +69,22 @@ class InputViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         
         super.viewWillDisappear(animated)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+           let viewcontroller2:ViewController2 = segue.destination as! ViewController2
+           
+           if segue.identifier == "categorysegue" {
+               let category = Category()
+               
+               let allCategory = realm.objects(Category.self)
+               if allCategory.count != 0{
+                   category.id = allCategory.max(ofProperty: "id")! + 1
+               }
+               viewcontroller2.category = category
+           }
+    }
+    
+    
     
     func setNotification(task: Task) {
         let content = UNMutableNotificationContent()

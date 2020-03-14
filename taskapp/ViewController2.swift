@@ -15,7 +15,7 @@ class ViewController2: UIViewController {
     @IBOutlet weak var addCategory: UITextField!
      let realm = try! Realm()
     var category: Category!
-    
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,9 +23,7 @@ class ViewController2: UIViewController {
         // Do any additional setup after loading the view.
      let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target:self, action:#selector(dismissKeyboard))
             self.view.addGestureRecognizer(tapGesture)
-        
-        
-        addCategory.text = category.tasktype
+         category = Category()
     }
     
     override func viewWillDisappear(_ animated: Bool) {

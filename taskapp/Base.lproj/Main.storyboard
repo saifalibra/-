@@ -116,7 +116,7 @@
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <connections>
-                                    <segue destination="nR1-bH-UIf" kind="show" id="GwA-3p-tm3"/>
+                                    <segue destination="nR1-bH-UIf" kind="show" identifier="categorysegue" id="GwA-3p-tm3"/>
                                 </connections>
                             </button>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cn8-ew-6JH">
@@ -224,6 +224,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="iq5-6M-n8v"/>
+        <segue reference="mwm-sK-Ank"/>
     </inferredMetricsTieBreakers>
 </document>
