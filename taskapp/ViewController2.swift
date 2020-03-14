@@ -23,7 +23,7 @@ class ViewController2: UIViewController {
         // Do any additional setup after loading the view.
      let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target:self, action:#selector(dismissKeyboard))
             self.view.addGestureRecognizer(tapGesture)
-         category = Category()
+         
     }
     
     override func viewWillDisappear(_ animated: Bool) {

@@ -54,7 +54,7 @@ class InputViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         selectCategory.delegate = self
         selectCategory.dataSource = self
         categoryArray = realm.objects(Category.self)
-              
+        k
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -82,6 +82,11 @@ class InputViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
                }
                viewcontroller2.category = category
            }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        selectCategory.reloadAllComponents()
     }
     
     
